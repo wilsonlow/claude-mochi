@@ -1,0 +1,16 @@
+# Copy to /etc/systemd/system/mochi.service and replace "pi" with your username
+[Unit]
+Description=Claude Mochi OLED Display
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/mochi
+EnvironmentFile=/home/pi/mochi/mochi.env
+ExecStart=/home/pi/mochi/venv/bin/python claude_mochi_pro_v2.py
+Restart=always
+RestartSec=10
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,11 @@
+# Python virtual environment
+venv/
+__pycache__/
+
+# Personal settings
+mochi.env
+
+# Never commit login tokens
+.credentials.json
+*.credentials.json
+.claude/
